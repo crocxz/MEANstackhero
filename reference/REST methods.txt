@@ -1,0 +1,14 @@
+METHOD     URL     ACTION
+GET     /api/hotels     get all/multiple hotels
+POST    /api/hotels     create hotel
+GET     /api/hotels/12345   get specific hotel
+PUT     ..                  update specific hotel
+DELETE  ..                   delete specific hotel
+
+GET     /api/hotels/12345/reviews   get all reviews for spec hotel
+POST    /api/hotels/12345/reviews   add review for sepc hotel
+GET     /api/hotels/12345/reviews/54321     get spec review 
+PUT     /api/hotels/12345/reviews/54321     update spec review 
+DELETE  /api/hotels/12345/reviews/54321     delete spec review
+
+// these arent individual documents, subdocuments of parents

@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 var Users = mongoose.model('User');
 var bcrypt = require('bcrypt-nodejs');

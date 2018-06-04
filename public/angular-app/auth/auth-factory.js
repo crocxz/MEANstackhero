@@ -1,14 +1,14 @@
 angular.module('meanhotel').controller('AuthFactory', AuthFactory);
 
 function AuthFactory() {
-return {
-   auth: auth
-};
+    return {
+        auth: auth
+    };
 
-   var auth = {
-       isLoggedIn: false
-   };
-    
+    var auth = {
+        isLoggedIn: false
+    };
 
-   
+
+
 }

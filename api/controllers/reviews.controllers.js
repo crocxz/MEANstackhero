@@ -36,6 +36,7 @@ module.exports.reviewsGetAll = function(req, res) {
 			.json(response.message); 
 		});
 }
+
 module.exports.reviewsGetOne = function(req, res) {
 	var hotelID = req.params.hotelID;
  	var reviewID = req.params.reviewID;

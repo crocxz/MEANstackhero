@@ -17,6 +17,7 @@ function LoginController($http, $location, $window, AuthFactory) {
                 username: vm.username,
                 password: vm.password
             };
+            
         $http.post('/api/users/login', user).then(function(response) {
             if(response.data.success) {
             $window.sessionStorage.token = response.data.token;

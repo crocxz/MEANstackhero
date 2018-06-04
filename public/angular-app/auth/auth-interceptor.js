@@ -1,11 +1,11 @@
 angular.module('meanhotel').controller('AuthInterceptor', AuthInterceptor);
 
 function AuthInterceptor($location, $q, $window, AuthFactory) {
-return {
-    request: request, 
-    response: response,
-    responseError: responseError
-};
+    return {
+        request: request,
+        response: response,
+        responseError: responseError
+    };
 
     function request(config) {
         config.headers = config.headers || {};
@@ -20,7 +20,7 @@ return {
     function response(response) {
         if (response.status === 200 && $window.sessionStorage.token && !AuthFactory.isLoggedIn) {
             AuthFactory.isLoggedIn = true;
-        }    
+        }
         if (response.status === 401) {
             AuthFactory.isLoggedIn = false;
         }
@@ -28,12 +28,12 @@ return {
     }
 
     function responseError(rejection) {
-      if (rejection.status === 401 || rejection.status === 403) {
-          delete $window.sessionStorage.token;
-          AuthFactory.isLoggedIn = false;
-          $location.path('/');
-      }
+        if (rejection.status === 401 || rejection.status === 403) {
+            delete $window.sessionStorage.token;
+            AuthFactory.isLoggedIn = false;
+            $location.path('/');
+        }
         return $q.reject(rejection);
-        
+
     }
 }
